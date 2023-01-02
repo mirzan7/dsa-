@@ -11,14 +11,14 @@ using namespace std;
 int main()
 {
     int i,j,n=4;
-    for(i=0;i<=4;i++)
+    for(i=0;i<=n;i++)
     {
-        for(j=n;j>=i;j--)
+        for(j=0;j<=n;j++)
         {
-            if((i==j)||(i+j>=n))
-              cout<<"* ";
-            else
-              cout<<" ";
+          if(i+j>n-1)
+            cout<<"+ ";
+          else
+            cout<<"  ";
         }
         cout<<endl;
     }
