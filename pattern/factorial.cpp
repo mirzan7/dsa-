@@ -15,3 +15,6 @@ int main()
     cout<<factorial(num);
     return 0;
 }
+
+
+
