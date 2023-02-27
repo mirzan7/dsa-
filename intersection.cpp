@@ -4,16 +4,14 @@ using namespace std;
 vector<int> intersection(vector<int> arr1,vector<int> arr2)
 {
     vector<int> arr3;
-    int count=0;
     for(int i=0;i<arr1.size();i++)
     {
-        count=0;
         for(int j=0;j<arr2.size();j++)
         {
             if(arr2[j]==arr1[i])
             {
                 arr2[j]=-1;
-                arr3.push_back(arr1[i]);count++;
+                arr3.push_back(arr1[i]);
             }
         }
     }
