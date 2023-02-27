@@ -12,12 +12,9 @@ vector<int> intersection(vector<int> arr1,vector<int> arr2)
         {
             if(arr2[j]==arr1[i])
             {
-                count++;
+                arr2[j]=-1;
+                arr3.push_back(arr1[i]);count++;
             }
-        }
-        if(count!=0)
-        { 
-            arr3.push_back(arr1[i]);
         }
     }
     return arr3;
