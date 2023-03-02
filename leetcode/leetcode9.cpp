@@ -14,8 +14,10 @@ int main()
     }
     while (x > num)
     {
+        cout << endl<< num << " " << x << endl;
         num = (num * 10) + (x % 10);
         x = x / 10;
+        cout << num << " " << x << endl<<endl;
     }
     if (x == num)
     {
@@ -23,7 +25,7 @@ int main()
     }
     if (x == num / 10)
     {
-        cout<<"x=="<<x<<endl;
+        cout<<"\nx=="<<x<<endl;
         cout<<"num =="<<num<<endl;
         cout<<"4.true\n";
     }
