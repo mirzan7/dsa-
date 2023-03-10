@@ -6,39 +6,25 @@ int finthefirstoccurence(int *arr, int size, int target)
     first=0;
     end=size-1;
     mid=(first+end)/2;
-    while(first<end)
+    int ans=-1;
+    while(first<=end)
     {
         if(arr[mid]==target)
         {
-            int mm=(first+mid)/2;
-            while(mm<mid)
-            {
-                if(arr[mm]==target)
-                {
-                    return mm+1;
-                }
-                if(target>arr[mm])
-                {
-                    first=mm;
-                }
-                if(target<arr[mm])
-                {
-                    end=mm;
-                }
-                mm=(first+mid)/2;
-            }
+            ans=mid;
+            end=mid-1;
         }
-        if(target>arr[mid])
+        else if(target>arr[mid])
         {
-            first=mid;
+            first=mid+1;
         }
-        if(target<arr[mid])
+        else if(target<arr[mid])
         {
-            end=mid;
+            end=mid-1;
         }
         mid=(first+end)/2;
     }
-    return 0;
+    return ans;
 }
 int main()
 {
