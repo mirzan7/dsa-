@@ -3,33 +3,47 @@
 using namespace std;
 int findmissingnumber(vector<int> arr)
 {
-    int ans;
     int first,mid,last;
-    int diff=0;
     first=0;
     last=arr.size()-1;
-    mid=(first+last)/2;
+    mid=first+(last-first)/2;
+    // while(first<last)
+    // {
+    //     if(arr[mid]>arr[mid-1] && arr[mid]>arr[mid+1])
+    //     {
+    //         return arr[mid];
+    //     }
+    //     if(arr[mid+1]>arr[mid])
+    //     {
+    //         first=mid;
+    //     }
+    //     if(arr[mid-1]>arr[mid])
+    //     {
+    //         last=mid;
+    //     }
+    //     mid=(first+last)/2;
+    // }
     while(first<last)
     {
-        if(arr[mid]>arr[mid-1] && arr[mid]>arr[mid+1])
+        if(arr[mid]<arr[mid+1])
         {
-            return arr[mid];
+            first=mid+1;
         }
-        if(arr[mid+1]>arr[mid])
-        {
-            first=mid;
-        }
-        if(arr[mid-1]>arr[mid])
+        else
         {
             last=mid;
         }
-        mid=(first+last)/2;
+        mid=first+(last-first)/2;
     }
-    return 0;
+    return first;
+}
+int findmissingnumber1(vector<int>& arr)
+{
+    return findmissingnumber(arr);
 }
 int main()
 {
     vector<int> arr{0,5,10,2};
-    cout<<findmissingnumber(arr);
+    cout<<findmissingnumber1(arr);
     return 0;
 }
