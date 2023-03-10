@@ -31,12 +31,13 @@ void print_3_largest_number(vector<int> arr)
 int main()
 {
     vector<int> arr;
-    int n;
+    int n,number;
     cout<<"enter the size of the array   ";
     cin>>n;
     for(int i=0;i<n;i++)
     {
-        arr.push_back(i);
+        cin>>number;
+        arr.push_back(number);
     }
     print_3_largest_number(arr);
     return 0;
