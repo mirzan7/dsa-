@@ -32,6 +32,20 @@ int main()
 {
     int n;
     cin>>n;
-    cout<<sqroot(n);
+    int ans=sqroot(n);
+    double actualans;
+    int precision;
+    double step=0.1;
+    cout<<"precisio   ";
+    cin>>precision;
+    for(int i=0;i<precision;i++)
+    {
+        for(double j=ans;j*j<=n;j=j+step)
+        {
+            actualans=j;
+        }
+        step/=10;
+    }
+    cout<<actualans;
     return 0;
 }
