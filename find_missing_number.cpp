@@ -1,36 +1,27 @@
 #include<iostream>
 #include<vector>
 using namespace std;
-int findmissingnumber(vector<int> arr)
+int findmissingnumber(vector<int> ar)
 {
-    int ans;
-    int f,mid,l;
-    int diff=0;
-    f=0;
-    l=arr.size()-1;
-    mid=(f+l)/2;
-    diff=arr[1]-arr[0];
-    while(f<l)
+     int l = 0, r = ar.size()-1;
+     
+    while (l <= r) 
     {
-        if(arr[mid]-arr[mid-1]!=diff)
+        int mid = (l + r) / 2;
+        if (ar[mid] != mid + 1 && ar[mid - 1] == mid)
+            return mid + 1;
+        if (ar[mid] != mid + 1)
         {
-            cout<<mid;
-            ans=arr[mid]+diff;
+            cout<<"last  "<<ar[r]<<endl;
+            r = mid - 1;
         }
-        else if((arr[mid]-mid )!=diff)
+        else
         {
-            l=mid-1;
-            cout<<"left  "<<l<<endl;
+            l = mid + 1;
+            cout<<"first  "<<ar[l]<<endl;
         }
-        else if((arr[l]-l)!= diff)
-        {
-            f=mid+1;
-            cout<<"right  "<<f<<endl;
-        }
-        mid=(f+l)/2;
     }
-    cout<<ans<<endl;
-    return ans;
+    return -1;
 }
 int main()
 {
