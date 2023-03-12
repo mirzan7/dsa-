@@ -3,21 +3,24 @@
 using namespace std;
 vector<int> intersectionoftwoarray(vector<int> arr1,vector<int> arr2)
 {
-    int m,n;
+    int m,n,i=0,j=0;
     vector<int> arr3;
     m=arr1.size();
     n=arr2.size();
-    for(int i=0;i<m;i++)
+    while(i<n && j<m)
     {
-        for(int j=0;j<n;j++)
+        if(arr1[i]==arr2[j])
         {
-            if(arr1[i]<arr2[j])
-                break;
-            if(arr1[i]==arr2[j])
-            {
-                arr3.push_back(arr1[i]);
-                arr2[j]=INT_MIN;
-            }
+            arr3.push_back(arr1[i]);
+            arr3[j]==INT_MIN;
+        }
+        if(arr1[i]<arr2[j])
+        {
+            i++;
+        }
+        else
+        {
+            j++;
         }
     }
     return arr3;
