@@ -6,7 +6,7 @@ vector<int> pairsum(vector<int> arr1,vector<int> arr2,int sum)
     vector <int> arr3;
     for(int i=0;i<arr1.size();i++)
     {
-        for(int j=0;j<arr2.size();j++)
+        for(int j=i+1;j<arr2.size();j++)
         {
             if(arr1[i]+arr2[j]==sum)
             {
