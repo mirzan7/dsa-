@@ -5,16 +5,16 @@ int quotient(int divident,int diviser)
 {
     int ans,first,mid,last;
     first=0;
-    last=divident;
+    last=abs(divident);
     mid=(first+last)/2;
     while(first<=last)
     {
-        if(diviser*mid==divident)
+        if(abs(diviser*mid)==abs(divident))
         {
-            return mid;
-
+            ans = mid;
+            break;
         }
-        if(diviser*mid<divident)
+        if(abs(diviser*mid)<abs(divident))
         {
             ans=mid;
             first=mid+1;
@@ -25,7 +25,10 @@ int quotient(int divident,int diviser)
         }
         mid=(first+last)/2;
     }
-    return ans;
+    if((diviser<0 && divident<0) || (diviser>0 && divident>0))
+        return ans;
+    else
+        return -ans;
 }
 int main()
 {
