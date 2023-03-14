@@ -3,7 +3,7 @@ using namespace std;
 vector<int> selection_sort(vector<int> arr)
 {
     int i=0;
-    int n=arr.size();
+    int n=arr.size()-1;
     while(i<=n)
     {
         for(int j=i+1;j<n;j++)
@@ -17,7 +17,8 @@ vector<int> selection_sort(vector<int> arr)
 }
 void print_array(vector<int> arr)
 {
-    for(int i=0;i<arr.size();i++)
+    int n=arr.size();
+    for(int i=0;i<n;i++)
     {
         cout<<arr[i]<<" ";
     }
