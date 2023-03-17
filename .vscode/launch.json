@@ -158,8 +158,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/HP/Desktop/dsa/dsa-/sorting",
-      "program": "c:/Users/HP/Desktop/dsa/dsa-/sorting/build/Debug/outDebug",
+      "cwd": "c:/Users/HP/Desktop/dsa/dsa-",
+      "program": "c:/Users/HP/Desktop/dsa/dsa-/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
