@@ -3,15 +3,13 @@ using namespace std;
 int k_diff_pair(vector<int> arr,int key)
 {
     int i=0;
-    int count=0;
-    int j=i+1;
-    
-    while(j<=arr.size() && i<j)
+    set<pair<int,int>> answer;
+    int j=1;
+    while(j<arr.size())
     {
         if(arr[j]-arr[i]==key)
         {
-
-            count++;
+            answer.insert({arr[i],arr[j]});
             i++;
             j++;
         }
@@ -23,8 +21,10 @@ int k_diff_pair(vector<int> arr,int key)
         {
             j++;
         }
+        if(i==j)
+            j++;
     }
-    return count;
+    return answer.size();
 }
 int main()
 {
